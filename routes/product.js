@@ -76,7 +76,7 @@ const products = {
 };
 
 router.get("/", (req, res) => {
-    res.json(products.result);
+    res.json(products);
 });
 
 router.get("/:key", (req, res) => {
