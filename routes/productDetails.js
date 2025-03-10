@@ -1456,15 +1456,15 @@ const productDetails = {
 };
 
 router.get("/", (req, res) => {
-    res.json(productDetails.productDetails);
+    res.json(productDetails.result);
 });
 
 router.get("/:key", (req, res) => {
     const key = req.params.key;
     
-    for (let i = 0; i < productDetails.productDetails.length; i ++) {
-        if (productDetails.productDetails[i].productId == key) {
-            return res.json(productDetails.productDetails[i]);
+    for (let i = 0; i < productDetails.result.length; i ++) {
+        if (productDetails.result[i].productId == key) {
+            return res.json(productDetails.result[i]);
         }
     }
 });
