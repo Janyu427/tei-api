@@ -1456,7 +1456,7 @@ const productDetails = {
 };
 
 router.get("/", (req, res) => {
-    res.json(productDetails.result);
+    res.json(productDetails);
 });
 
 router.get("/:key", (req, res) => {
