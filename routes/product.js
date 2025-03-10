@@ -76,15 +76,15 @@ const products = {
 };
 
 router.get("/", (req, res) => {
-    res.json(products.product);
+    res.json(products.result);
 });
 
 router.get("/:key", (req, res) => {
     const key = req.params.key;
     
-    for (let i = 0; i < products.product.length; i ++) {
-        if (products.product[i].key == key) {
-            return res.json(products.product[i]);
+    for (let i = 0; i < products.result.length; i ++) {
+        if (products.result[i].key == key) {
+            return res.json(products.result[i]);
         }
     }
 });
