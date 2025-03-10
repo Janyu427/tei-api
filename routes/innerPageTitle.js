@@ -44,9 +44,9 @@ router.get("/", (req, res) => {
 router.get("/:key", (req, res) => {
     const key = req.params.key;
 
-    for (let i = 0; i < innerPageTitle.InnerBannerPageTitle.length; i ++) {
-        if (innerPageTitle.InnerBannerPageTitle[i].key == key) {
-            return res.json(innerPageTitle.InnerBannerPageTitle[i]);
+    for (let i = 0; i < innerPageTitle.result.length; i ++) {
+        if (innerPageTitle.result[i].key == key) {
+            return res.json(innerPageTitle.result[i]);
         }
     }
 });
