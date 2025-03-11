@@ -76,17 +76,17 @@ const products = {
 };
 
 router.get("/", (req, res) => {
-    res.json(products);
-});
+    if (req.query.categoryId) {
+        const categoryId = req.query.categoryId;
 
-router.get("/:key", (req, res) => {
-    const key = req.params.key;
-    
-    for (let i = 0; i < products.result.length; i ++) {
-        if (products.result[i].key == key) {
-            return res.json(products.result[i]);
+        for (let i = 0; i < products.result.length; i ++) {
+            if (products.result[i].key == categoryId) {
+                return res.json(products.result[i]);
+            }
         }
     }
+
+    res.json(products);
 });
 
 module.exports = router;
